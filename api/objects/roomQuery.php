@@ -55,7 +55,7 @@ class roomQuery{
             $stmt->bindParam(":day", $this->day);
             $stmt->bindParam(":time", $this->time);
             $stmt->bindParam(":timeInMillis", $this->timeInMillis);
-            $stmt->bindParam(":isbooked", $this->isbooked);
+            $stmt->bindParam(":isbooked", $this->isBooked);
             $stmt->bindParam(":contact_no", $this->contact_no);
             $stmt->bindParam(":courseCode", $this->courseCode);
         
