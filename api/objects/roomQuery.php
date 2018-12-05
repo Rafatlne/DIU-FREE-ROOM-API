@@ -10,7 +10,7 @@ class roomQuery{
     public $roomNo;
     public $day;
     public $time;
-    public $timeInMillis;
+    public $timeStamp;
     public $isbooked;
     public $contact_no;
     public $courseCode;
@@ -44,8 +44,8 @@ class roomQuery{
             $query = "INSERT INTO
                         " . $this->table_name . "
                     SET
-                       roomNo=:roomNo, day=:day, time=:time, timeInMillis=:timeInMillis ,
-                        isbooked=:isbooked, contact_no=:contact_no,courseCode=:courseCode";
+                       roomNo=:roomNo, day=:day, time=:time, timeStamp=:timeStamp
+                       ,isbooked=:isbooked, contact_no=:contact_no,courseCode=:courseCode";
         
             // prepare query
             $stmt = $this->conn->prepare($query);
@@ -53,7 +53,7 @@ class roomQuery{
             $stmt->bindParam(":roomNo", $this->roomNo);
             $stmt->bindParam(":day", $this->day);
             $stmt->bindParam(":time", $this->time);
-            $stmt->bindParam(":timeInMillis", $this->timeInMillis);
+            $stmt->bindParam(":timeStamp", $this->timeStamp);
             $stmt->bindParam(":isbooked", $this->isbooked);
             $stmt->bindParam(":contact_no", $this->contact_no);
             $stmt->bindParam(":courseCode", $this->courseCode);
@@ -66,5 +66,47 @@ class roomQuery{
             return false;
             
         }
+
+
+        function insertMultipleJSON(){
+    
+            // select all query
+            $query = "SELECT * FROM ". $this->table_name ."";
+        
+            // prepare query statement
+            $stmt = $this->conn->prepare($query);
+        
+            // execute query
+            $stmt->execute();
+        
+            return $stmt;
+        }
+    
+        // create product
+    
+        public function insertAllJson(){
+            
+                // query to insert record
+    
+                $query = "INSERT INTO
+                            " . $this->table_name . "
+                        SET
+                           roomNo=:roomNo, day=:day, time=:time, timeStamp=:timeStamp";
+                // prepare query
+                $stmt = $this->conn->prepare($query);
+                // bind values
+                $stmt->bindParam(":roomNo", $this->roomNo);
+                $stmt->bindParam(":day", $this->day);
+                $stmt->bindParam(":time", $this->time);
+                $stmt->bindParam(":timeStamp", $this->timeStamp);
+            
+                // execute query
+                if($stmt->execute()){
+                    return true;
+                }
+            
+                return false;
+                
+            }
 }
 

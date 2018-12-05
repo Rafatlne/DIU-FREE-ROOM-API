@@ -22,18 +22,22 @@ $roomQuery = new roomQuery($db);
 $data = json_decode(file_get_contents("php://input"));
  
 // make sure data is not empty
+
 if(
     !empty($data->roomNo) &&
     !empty($data->day) &&
     !empty($data->time) &&
-    !empty($data->timeInMillis)
+    !empty($data->timeStamp) &&
+    !empty($data->isbooked) &&
+    !empty($data->contact_no) &&
+    !empty($data->courseCode)
 ){
  
     // set product property values
     $roomQuery->roomNo = $data->roomNo;
     $roomQuery->day = $data->day;
     $roomQuery->time = $data->time;
-    $roomQuery->timeInMillis = $data->timeInMillis;
+    $roomQuery->timeStamp = $data->timeStamp;
     $roomQuery->isbooked = $data->isbooked;
     $roomQuery->contact_no = $data->contact_no;
     $roomQuery->courseCode = $data->courseCode;
@@ -68,4 +72,5 @@ else{
     // tell the user
     echo json_encode(array("message" => "Unable to create product. Data is incomplete."));
 }
+
 ?>

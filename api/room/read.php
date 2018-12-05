@@ -36,9 +36,9 @@ if($num>0){
             "roomNo" => $roomNo,
             "day" => $day,
             "time" => $time,
-            "timeInMillis" => $timeInMillis,
+            "timeStamp" => $timeStamp,
             "isbooked" => $isbooked,
-            "contact_no" => $contact_no,
+           "contact_no" => $contact_no,
             "courseCode" => $courseCode
         );
  
