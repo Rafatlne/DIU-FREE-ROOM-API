@@ -12,17 +12,17 @@ $database = new Database();
 $db = $database->connect();
  
 // initialize object
-$product = new roomQuery($db);
+$roomQuey = new roomQuery($db);
  
 // query products
-$stmt = $product->read();
+$stmt = $roomQuey->read();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
  
     // products array
-    $products_arr=array();
+    $freeroom_arr=array();
  
     // retrieve our table contents
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -31,7 +31,7 @@ if($num>0){
         // just $name only
         extract($row);
  
-        $product_item=array(
+        $freeroom_item=array(
             "id" => $id,
             "roomNo" => $roomNo,
             "day" => $day,
@@ -43,14 +43,14 @@ if($num>0){
         );
  
         //array_push($products_arr["records"], $product_item);
-        array_push($products_arr, $product_item);
+        array_push($freeroom_arr, $freeroom_item);
     }
  
     // set response code - 200 OK
     http_response_code(200);
  
     // show products data in json format
-    echo json_encode($products_arr);
+    echo json_encode($freeroom_arr);
 }
  
 // no products found will be here
