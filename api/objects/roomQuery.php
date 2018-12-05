@@ -11,7 +11,7 @@ class roomQuery{
     public $day;
     public $time;
     public $timeInMillis;
-    public $isBooked;
+    public $isbooked;
     public $contact_no;
     public $courseCode;
  
@@ -44,18 +44,17 @@ class roomQuery{
             $query = "INSERT INTO
                         " . $this->table_name . "
                     SET
-                        id=:id, roomNo=:roomNo, day=:day, time=:time, timeInMillis=:timeInMillis ,
+                       roomNo=:roomNo, day=:day, time=:time, timeInMillis=:timeInMillis ,
                         isbooked=:isbooked, contact_no=:contact_no,courseCode=:courseCode";
         
             // prepare query
             $stmt = $this->conn->prepare($query);
             // bind values
-            $stmt->bindParam(":id", $this->id);
             $stmt->bindParam(":roomNo", $this->roomNo);
             $stmt->bindParam(":day", $this->day);
             $stmt->bindParam(":time", $this->time);
             $stmt->bindParam(":timeInMillis", $this->timeInMillis);
-            $stmt->bindParam(":isbooked", $this->isBooked);
+            $stmt->bindParam(":isbooked", $this->isbooked);
             $stmt->bindParam(":contact_no", $this->contact_no);
             $stmt->bindParam(":courseCode", $this->courseCode);
         

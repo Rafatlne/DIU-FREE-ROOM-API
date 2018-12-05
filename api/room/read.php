@@ -37,7 +37,7 @@ if($num>0){
             "day" => $day,
             "time" => $time,
             "timeInMillis" => $timeInMillis,
-            "isBooked" => $isbooked,
+            "isbooked" => $isbooked,
             "contact_no" => $contact_no,
             "courseCode" => $courseCode
         );
