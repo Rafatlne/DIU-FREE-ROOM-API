@@ -18,4 +18,4 @@
 `http://localhost/RoomBooks/api/room/update.php`
 
 11. Replace localhost with your ip address. link will be something like this:
-  `http://localhost/RoomBooks/api/room/update.php`
+  `http://192.168.0.102/RoomBooks/api/room/update.php`
