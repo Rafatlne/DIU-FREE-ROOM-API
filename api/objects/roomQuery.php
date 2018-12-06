@@ -21,7 +21,7 @@ class roomQuery{
     }
 
     // read products
-    function read(){
+    public function read(){
     
         // select all query
         $query = "SELECT * FROM ". $this->table_name ."";
@@ -37,7 +37,7 @@ class roomQuery{
 
     // create product
 
-        public function create(){
+    public function create(){
         
             // query to insert record
 
@@ -68,7 +68,7 @@ class roomQuery{
         }
 
 
-        function insertMultipleJSON(){
+    public function insertMultipleJSON(){
     
             // select all query
             $query = "SELECT * FROM ". $this->table_name ."";
@@ -84,7 +84,7 @@ class roomQuery{
     
         // create product
     
-        public function insertAllJson(){
+    public function insertAllJson(){
             
                 // query to insert record
     
@@ -108,5 +108,34 @@ class roomQuery{
                 return false;
                 
             }
-}
 
+function update(){
+ 
+                // update query
+                $query = "UPDATE
+                            " . $this->table_name . "
+                    SET 
+                                     
+                        isbooked=:isbooked,
+                        contact_no=:contact_no,
+                        courseCode=:courseCode
+                    WHERE
+                        id=:id";
+             
+                // prepare query statement
+                $stmt = $this->conn->prepare($query);
+             
+             
+                // bind new values
+                $stmt->bindParam(":id",$this->id);
+                $stmt->bindParam(":isbooked", $this->isbooked);
+                $stmt->bindParam(":contact_no", $this->contact_no);
+                $stmt->bindParam(":courseCode", $this->courseCode);
+                // execute the query
+                if($stmt->execute()){
+                    return true;
+                }
+             
+                return false;
+            }
+}
