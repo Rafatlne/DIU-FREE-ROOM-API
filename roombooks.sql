@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 05, 2018 at 02:46 PM
+-- Generation Time: Dec 06, 2018 at 06:03 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -35,7 +35,7 @@ CREATE TABLE `emptyroom` (
   `time` varchar(20) NOT NULL,
   `timeStamp` bigint(15) NOT NULL,
   `isbooked` varchar(12) DEFAULT NULL,
-  `contact_no` int(12) DEFAULT NULL,
+  `contact_no` varchar(12) DEFAULT NULL,
   `courseCode` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -44,7 +44,7 @@ CREATE TABLE `emptyroom` (
 --
 
 INSERT INTO `emptyroom` (`id`, `roomNo`, `day`, `time`, `timeStamp`, `isbooked`, `contact_no`, `courseCode`) VALUES
-(1, 'L-601 CSE', 'Thursday', '10.00 AM - 11.30 AM', 1536206400000, NULL, NULL, NULL),
+(1, 'L-601 CSE', 'Thursday', '10.00 AM - 11.30 AM', 1536206400000, 'lel', '01521431920', 'lel'),
 (2, '102 CSE', 'Thursday', '02.30 PM - 04.00 PM', 1536222600000, NULL, NULL, NULL),
 (3, '102 CSE', 'Thursday', '04.00 PM - 05.30 PM', 1536228000000, NULL, NULL, NULL),
 (4, '201 CSE', 'Thursday', '08.30 AM - 10.00 AM', 1536201000000, NULL, NULL, NULL),
