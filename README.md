@@ -21,10 +21,10 @@
 
 ``` json
 {
-            "id": 1,
-            "isbooked": "lel",
-            "contact_no" : "01571717171",
-            "courseCode": "lel"
+    "id": 1,
+    "isbooked": "lel",
+    "contact_no" : "01571717171",
+    "courseCode": "lel"
 }
 ```
 
