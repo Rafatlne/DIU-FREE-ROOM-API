@@ -16,15 +16,17 @@
 
   **10.Read all data from database use this end point or _POST request use this end point** 
 `http://localhost/RoomBooks/api/room/update.php`
+
 11. For update(_POST) in database send JSON like this
-    ```json
-    {
-        "id": 1,
-        "isbooked": "lel",
-        "contact_no" : "01571717171",
-        "courseCode": "lel"
-    }
-    ```
+
+``` json
+{
+            "id": 1,
+            "isbooked": "lel",
+            "contact_no" : "01571717171",
+            "courseCode": "lel"
+}
+```
 
 
 12. Replace localhost with your ip address. link will be something like this:
