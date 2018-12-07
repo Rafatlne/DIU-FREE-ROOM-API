@@ -35,7 +35,7 @@ if($roomQuery->update()){
     http_response_code(200);
  
     // tell the user
-    echo json_encode(array("message" => "Product was updated."));
+    echo json_encode(array("successful"));
 }
  
 // if unable to update the product, tell the user
