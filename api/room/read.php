@@ -48,9 +48,6 @@ if($num>0){
  
     // set response code - 200 OK
     http_response_code(200);
-
-    //tell the user
-    echo json_encode(array("successful"));
  
     // show products data in json format
     echo json_encode($freeroom_arr);
