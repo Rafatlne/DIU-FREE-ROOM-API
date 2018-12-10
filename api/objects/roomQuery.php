@@ -24,7 +24,8 @@ class roomQuery{
     public function read(){
     
         // select all query
-        $query = "SELECT * FROM ". $this->table_name ."";
+        //$query = "SELECT * FROM ". $this->table_name ."";
+        $query = "SELECT * FROM ". $this->table_name ." WHERE isbooked = 'pending' OR isbooked IS NULL";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
@@ -68,19 +69,6 @@ class roomQuery{
         }
 
 
-    public function insertMultipleJSON(){
-    
-            // select all query
-            $query = "SELECT * FROM ". $this->table_name ."";
-        
-            // prepare query statement
-            $stmt = $this->conn->prepare($query);
-        
-            // execute query
-            $stmt->execute();
-        
-            return $stmt;
-        }
     
         // create product
     
