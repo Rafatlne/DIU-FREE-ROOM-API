@@ -1,4 +1,4 @@
-##How to start this api
+## How to start this api
 1. Download Xampp.
 2. Open Xampp. Start Apache and Mysql.
 3. Download this zip file .
